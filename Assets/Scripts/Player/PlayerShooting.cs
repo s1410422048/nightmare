@@ -32,7 +32,7 @@ public class PlayerShooting : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-		if(Input.GetButton ("Fire1") && timer >= timeBetweenBullets && Time.timeScale != 0)
+		if(Input.GetButton ("Fire1") && timer >= timeBetweenBullets && Time.timeScale != 0)//Fire1是unity內建好的熱鍵
         {
             Shoot ();
         }
@@ -68,7 +68,7 @@ public class PlayerShooting : MonoBehaviour
         shootRay.origin = transform.position;
         shootRay.direction = transform.forward;
 
-        if(Physics.Raycast (shootRay, out shootHit, range, shootableMask))
+        if(Physics.Raycast (shootRay, out shootHit, range, shootableMask))//若有打到東西就進入以下程式
         {
             EnemyHealth enemyHealth = shootHit.collider.GetComponent <EnemyHealth> ();
             if(enemyHealth != null)
