@@ -4,7 +4,7 @@ using System.Collections;
 
 public class ScoreManager : MonoBehaviour
 {
-    public static int score;
+    public static int score;//靜態變數:唯一一個score不能有其他的
 
 
     Text text;
